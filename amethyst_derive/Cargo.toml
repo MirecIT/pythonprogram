@@ -1,0 +1,32 @@
+[package]
+name = "amethyst_derive"
+version = "0.15.3"
+authors = [
+    "Simon Rönnberg <seamonr@gmail.com>",
+    "Amethyst Foundation <contact@amethyst.rs>",
+]
+edition = "2018"
+description = "Amethyst derive"
+
+documentation = "https://docs.amethyst.rs/stable/amethyst_derive/"
+homepage = "https://amethyst.rs/"
+repository = "https://github.com/amethyst/amethyst"
+
+license = "MIT/Apache-2.0"
+
+# FIXME: remove after legion port
+autotests = false
+
+[dependencies]
+syn = { version = "1.0", default-features = false }
+quote = "1.0"
+proc-macro2 = "1.0"
+glob = "0.3.0"
+regex = "1.4.3"
+
+[dev-dependencies]
+amethyst = { path = "../", version = "0.15.3", features = ["renderer"] }
+
+[lib]
+name = "amethyst_derive"
+proc-macro = true

@@ -1,0 +1,35 @@
+[package]
+name = "amethyst_network"
+version = "0.15.3"
+authors = [
+	"Joël Lupien (Jojolepro) <jojolepro@jojolepro.com>",
+	"Lucio Franco (LucioFranco) <luciofranco14@gmail.com>",
+	"Timon Post (TimonPost) <https://github.com/TimonPost>",
+	"Justin LeFebvre (jstnlef) <https://github.com/jstnlef>",
+	"Amethyst Foundation <contact@amethyst.rs>",
+]
+edition = "2018"
+description = "Amethyst networking crate"
+keywords = ["networking", "specs", "ecs", "amethyst", "serialization"]
+categories = ["game-engines"]
+
+readme = "README.md"
+documentation = "https://docs.amethyst.rs/stable/amethyst_network/index.html"
+homepage = "https://amethyst.rs/"
+repository = "https://github.com/amethyst/amethyst"
+license = "MIT/Apache-2.0"
+
+[features]
+profiler = ["thread_profiler/thread_profiler"]
+
+[dependencies]
+amethyst_core = { path = "../amethyst_core", version = "0.15.3" }
+amethyst_error = { path = "../amethyst_error", version = "0.15.3" }
+bytes = "1.0"
+laminar = "0.4"
+log = "0.4"
+thread_profiler = { version = "0.3", optional = true }
+derive-new = "0.5"
+
+[dev-dependencies]
+amethyst = { path = "../", version = "0.15.3", features = ["renderer"] }

@@ -1,0 +1,25 @@
+# Unwanted files
+book/book
+target
+*.log
+Cargo.lock
+
+# Backup files
+.DS_Store
+thumbs.db
+*~
+*.rs.bk
+*.swp
+
+# IDE / Editor files
+*.iml
+.idea
+.vscode
+
+# Thread profiler output
+thread_profile.json
+
+# Distill Assets
+.assets_db
+prefab.ron
+*.meta

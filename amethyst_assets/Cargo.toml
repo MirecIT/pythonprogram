@@ -1,0 +1,68 @@
+[package]
+name = "amethyst_assets"
+version = "0.15.3"
+authors = [
+    "torkleyy <torkleyy@gmail.com>",
+    "Amethyst Foundation <contact@amethyst.rs>",
+]
+readme = "README.md"
+edition = "2018"
+description = """
+Asynchronous asset management for games.
+"""
+exclude = ["examples/*"]
+license = "MIT/Apache-2.0"
+keywords = ["game", "asset", "resource", "management", "amethyst"]
+categories = ["filesystem"]
+
+documentation = "https://docs.amethyst.rs/stable/amethyst_assets/"
+homepage = "https://amethyst.rs/"
+repository = "https://github.com/amethyst/amethyst"
+
+[dependencies]
+amethyst_core = { path = "../amethyst_core", version = "0.15.3" }
+amethyst_error = { path = "../amethyst_error", version = "0.15.3" }
+crossbeam-queue = "0.3"
+derivative = "2.1.1"
+crossbeam-channel = "0.5"
+derive-new = "0.5"
+fnv = "1"
+log = "0.4"
+parking_lot = "0.11"
+rayon = "1.5"
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", optional = true }
+ron = "0.6.4"
+thread_profiler = { version = "0.3", optional = true }
+err-derive = "0.3"
+dyn-clone = "1.0"
+erased-serde = "0.3.9"
+inventory = "0.1.5"
+lazy_static = "1.4"
+distill = { version = "0.0.2", features = [
+    "serde-1",
+    "type_uuid",
+    "serde_importers",
+    "parallel_hash",
+    "rpc_io",
+    "handle",
+] }
+uuid = { version = "0.8", features = ["v4"] }
+bincode = "1.1"
+type-uuid = "0.1"
+futures-executor = { version = "0.3", default-features = false }
+legion-prefab = { version = "0.1", git = "https://github.com/amethyst/prefab", rev = "7c30249f106e6177549e223ca2823eec8ab6c70b" }
+prefab-format = { version = "0.1", git = "https://github.com/amethyst/prefab", rev = "7c30249f106e6177549e223ca2823eec8ab6c70b" }
+encoding_rs_io = "0.1"
+serde-diff = "0.4"
+
+[dev-dependencies]
+amethyst = { path = "../", version = "0.15.3", features = ["renderer"] }
+serde_json = "1"
+fern = { version = "0.6", features = ["colored"] }
+serde-diff = "0.4"
+serial_test = "0.5.1"
+
+[features]
+profiler = ["thread_profiler/thread_profiler"]
+json = ["serde_json"]
